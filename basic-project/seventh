@@ -1,0 +1,29 @@
+function getObject() {
+	return {
+		name: "sen"
+		age: 23
+	}
+}
+
+const getObject = () => ({
+	name: "sen"
+	age: 23
+});
+
+function multiply10 (num){
+  const result = num*10;
+  return result;
+}
+
+const multiply = num => {
+  const result = num * 10;
+  return result;
+}
+
+function outer(x){
+	return function inner(y){
+		return y*y;
+	}
+}
+
+const outer = (x) => (y) => y * y;
