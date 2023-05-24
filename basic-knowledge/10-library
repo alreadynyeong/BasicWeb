@@ -1,0 +1,100 @@
+1. 라이브러리
+• 개념
+- 소프트웨어를 개발할 때 컴퓨터 프로그램이 사용하는 비휘발성 자원의 모임
+- 특정 기능을 모아둔 코드, 함수들의 집합으로 코드 작성 시 활용 가능한 도구
+
+• 예시
+- React.js, JQuery
+- npm 모듈
+
+• 특징
+- 사용자가 어플리케이션 코드의 흐름을 직접 제어함
+
+2. 프레임워크
+• 개념
+- 원하는 기능 구현에 집중하여 개발할 수 있도록 일정한 형태와 기능을 갖추고 있는 골격, 뼈대
+- 앱 개발 시 필수적인 코드, 알고리즘, DB 연동과 같은 기능들을 위해 어느 정도 구조를 제공
+- 사용자는 이 위에서 코드를 작성하여 개발
+- 구동, 메모리 관리, 이벤트 루프 등 공통된 부분은 프레임워크가 관리
+
+• 예시
+- Spring, Django
+- Android
+- Angular, Vue.js
+
+• 특징
+- 프레임워크가 짜 놓은 틀에서 수동적으로 동작해 제어의 흐름은 프레임워크가 가짐
+- 제어의 역전
+
+3. Material-UI
+• 자바스크립트 라이브러리
+- React를 사용하는 프론트엔드 앱에서 구글의 컴포넌트를 쉽게 사용할 수 있음
+- Material Design: 사용자 인터페이스를 디자인하는데 사용되는 구글의 디자인언어
+- 개발 시간을 줄이고 일관된 디자인 적용 가능함
+
+4. React Spring
+• 자연스러운 애니메이션을 위해 스프링의 원리를 기반으로 한 애니메이션을 설계함
+
+• Hook
+- useSpring: data를 a에서 b로 이동
+- useSprings: multiple Spring
+- useTrail: 단일 dataset을 위한 multiple spring. 하나의 spring을 다른 것들이 따라감
+- useTransition: 트랜지션의 mount/unmount를 위해 사용
+- useChain: 여러 애니메이션을 중첩하여 적용하거나, 순차적으로 적용하기 위해 사용
+
+5. React Hook Form
+• 개념
+- react에서 form의 validation을 빠르고 쉽게 도와주는 라이브러리
+- 전체 폼이 리랜더링 되지 않으면서도 각각의 입력값 변화를 관찰할 수 있어 선능이 빠르고 의존성 없이 쉽게 사용 가능
+
+• 장점
+- 비제어 컴포넌트: react에 의해 값이 제어되지 않는 컴포넌트. state로 값을 관리할 필요 없음. 값이 변경되어도 리랜더링 되지 않음
+- 패키지의 크기가 작음
+- 타입스크립트를 기본 제공함
+- 친절한 공식문서와 지속적인 업데이트
+
+6. Framer Motion
+• 개념
+- 리액트를 위한 웹 애니메이션, 제스처 오픈소스 라이브러리
+
+• 기능
+- 다양한 애니메이션단순한 키프레인 문법 제공
+- 제스쳐(drag, tap, hover)
+- 레이아웃 애니메이션
+- SVG paths
+- Exit 애니메이션
+- 서버사이드 렌더링
+- 컴포넌트 간의 애니메이션 오케스트레이팅
+- CSS변수
+...
+
+• 기본 코드
+import { motion } from "framer-motion";
+
+export const MyComponent = () => <motion.div animate= transition= />;
+
+• animation
+- 간단하게 애니메이션 설정값 바로 사용
+
+• initial
+- 필요한 경우에 애니메이션 초기값 지정
+
+• transition
+- motion은 애니메이션을 적용할 속성에 따라 적절한 트랜지션 기본값을 미리 제공함
+
+7. React Testing Library
+• 개념
+- facebook에서 공식적으로 사용을 권장하는 테스트 도구
+- 사용자가 컴포넌트를 사용하는 것처럼 테스트를 작성할 수 있도록 설계됨
+
+• 구조
+import { render } from "@testing-library/react";
+
+const CounterProps = {
+  count: 0,
+  onIncrease: jest.fn(),
+  onDecrease: jest.fn(),
+};
+
+describe("<Counter />", () => {});
+- jest.fn()은 살제 함수가 아닌 가짜 함수 -> 사용자 관점에서 컴포넌트가 동작하는지 보기 위한 것이기 때문에 가짜함수도 가능
